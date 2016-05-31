@@ -87,7 +87,7 @@ $scope.addFavorite = function () {
   petFave.description = desc ? desc : 'No description';
   petFave.animalType = $scope.animal.animal.$t;
 
-  $scope.dataFactory.factorySaveFavorite(favorites).then(function() {
+  $scope.dataFactory.factorySaveFavorite(petFave).then(function() {
     console.log('done saving');
     $scope.favCount = $scope.dataFactory.factoryGetFavorites().length;
   });
@@ -100,6 +100,7 @@ function getNumFavorites () {
     .then(function (response) {
       $scope.favCount = response.data.length;
       console.log('GET /pets ', response.data);
+      console.log($scope.favCount);
     });
 }
 }]);
