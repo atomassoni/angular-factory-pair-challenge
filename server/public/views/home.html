@@ -1,0 +1,31 @@
+<div class="row">
+
+
+
+    <div class="seven columns home" ng-init="getRandomPet()">
+      <h4>Choose an Animal Type:</h4>
+
+
+
+      <button ng-click="getRandomPet()">get random</button>
+
+      <select ng-options="pet.label for pet in types" ng-model="selectedType" ng-change="getRandomPet()">
+    </select>
+
+<h2>{{animal.name.$t}}</h2>
+<p>{{animal.description.$t}}</p>
+
+<div>
+
+    <input type="text" value="exceeds+expectations" ng-model="giphySearch" ><button ng-click="getRandomPetGif()">{{giphySearch}}</button></p><img ng-src="{{animalGif}}" alt="meow" />
+</div>
+
+</div>
+<div class="five columns">
+
+    <img ng-if="animal.media.photos.photo[3].$t" ng-src="{{animal.media.photos.photo[3].$t}}" alt="{{animal.media.photos.photo[3].$t}}" />
+    <button ng-click="addFavorite()">Add To Favorites</button>
+    <span>	&hearts; {{favCount}} &hearts;</span>
+
+</div>
+</div>

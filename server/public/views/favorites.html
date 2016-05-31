@@ -1,0 +1,34 @@
+
+
+
+<div class="row">
+
+  <div class="nine columns">
+    <h3><span>	&hearts; {{favCount}} &hearts;</span></h3>
+    <table class="u-full-width">
+  <thead >
+    <tr>
+      <th></th>
+
+      <th></th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="pet in favorites | orderBy: 'animalType'">
+      <td> <img ng-src="{{pet.imageUrl}}" description="{{pet.name}}"/></td>
+
+      <td><em>{{pet.petId}}</em> <h5>A {{pet.animalType}} named {{pet.name}} </h5> {{pet.description}}...</td>
+
+      <td><button ng-click="deleteFavorite(pet._id)">remove from favorites</button></td>
+    </tr>
+
+  </tbody>
+</table>
+  </div>
+
+  <div class="three columns">
+
+  </div>
+</div>
