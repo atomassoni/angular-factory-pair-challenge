@@ -7,7 +7,7 @@ $scope.dataFactory = DataFactory;
   var baseURL = 'http://api.petfinder.com/';
   var giphyKey = 'dc6zaTOxFJmzC';
   var giphyBaseURL = 'http://api.giphy.com/';
-$scope.giphySearch = '';
+$scope.giphySearch = 'gif';
 
 
   $scope.animal = [];
