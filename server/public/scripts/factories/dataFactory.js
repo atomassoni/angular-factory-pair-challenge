@@ -26,6 +26,20 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   }
 
+  function deleteData(id) {
+    var promise = $http.delete('/favorites/' + id).then(function(response) {
+      console.log('deleted: ', response.data);
+      if(response.status == 204) {
+        console.log('Hooray! deleted!');
+        return getFavoriteData();
+      } else {
+        console.log('Boo!', response.data);
+      }
+
+    });
+
+    return promise;
+  }
   // PUBLIC
   var publicApi = {
     factorySaveFavorite: function(newFavorite) {
@@ -37,7 +51,11 @@ myApp.factory('DataFactory', ['$http', function($http) {
     factoryGetFavorites: function() {
       // return our array
       return favorites;
-    }
+    },
+    factoryDeleteFavorite: function(id) {
+      return deleteData(id);
+    },
+
   };
 
   return publicApi;

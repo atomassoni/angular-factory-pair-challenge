@@ -103,4 +103,6 @@ function getNumFavorites () {
       console.log($scope.favCount);
     });
 }
+
+
 }]);

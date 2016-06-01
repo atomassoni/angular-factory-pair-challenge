@@ -19,6 +19,16 @@ if($scope.dataFactory.factoryGetFavorites() === undefined) {
   $scope.favCount = $scope.favorites.length;
 }
 
+$scope.deleteFavorite = function  (id) {
+  if (confirm("delete this favorite?")){
+  $scope.dataFactory.factoryDeleteFavorite(id).then(function() {
+    $scope.favorites = $scope.dataFactory.factoryGetFavorites();
+    $scope.favCount = $scope.dataFactory.factoryGetFavorites().length;
+
+
+  });
+}
+};
 
 
 }]);
